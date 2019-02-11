@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value="/trainers")
+@RequestMapping("/trainers")
 public class TrainerController {
     private final TrainerService trainerService;
 
@@ -16,13 +16,13 @@ public class TrainerController {
         this.trainerService = trainerService;
     }
 
-    @GetMapping(value="/")
-    Iterable<Trainer> getAllTrainers(){
+    @GetMapping("/")
+    public Iterable<Trainer> getAllTrainers(){
         return trainerService.getAllTrainers();
     }
 
-    @GetMapping(value="/{name}")
-    Trainer getTrainer(@PathVariable String name){
+    @GetMapping("/{name}")
+    public Trainer getTrainer(@PathVariable String name){
         return trainerService.getTrainer(name);
     }
 }

@@ -2,9 +2,11 @@ package com.miage.altea.tp.trainer_api.service;
 
 import com.miage.altea.tp.trainer_api.bo.Trainer;
 import com.miage.altea.tp.trainer_api.repository.TrainerRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class TrainerServiceImpl implements TrainerService{
     private TrainerRepository trainerRepository;
 
